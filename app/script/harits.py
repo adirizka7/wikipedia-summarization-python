@@ -8,7 +8,11 @@ import math
 from operator import itemgetter
 
 def fungsi_adi(masukan):
-    p = wikipedia.page(str(masukan))
+    try:
+        p = wikipedia.page(str(masukan))
+    except Exception as E:
+        E = str(E).split("refer to:")[1].split('\n')[1]
+        p = wikipedia.page(str(E))
     content = p.content.split("References")[0]
     content = content.split('See also')[0]
 

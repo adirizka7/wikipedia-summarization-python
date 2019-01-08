@@ -23,19 +23,20 @@
  <h1 align="left" style = "font-size: 30px; margin: 5px;" >WikiUhuy</h1>
   <!-- <p align="center" style = "font-size: 15px; margin-bottom: 30px;" >Summarize Tool Based on Wikipedia Articles</p> -->
    <div class="search">
-      <input type="text" class="searchTerm" placeholder="What are you looking for?">
-      <button type="submit" class="searchButton">
-        <i class="fa fa-search"></i>
-     </button>
+   	<form action="{{ url_for('handle_data')}}" method="post">
+                <input type="text" name="query" class="searchTerm" placeholder="What are you looking for?">
+                <button type="submit" value="submit" class="searchButton">
+                        <i class="fa fa-search"></i>
+                </button>
+        </form> 
    </div>
 </div>
 
 <div class="wrap2">
-<h3 style= "color: red">Hasil dari : Ini Kata kunci</h3>
+<h3 style= "color: red">Result of : {{ result[1] }}</h3>
 <div class="box">
 <div class="isi">
-coba2skjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjakgdksgfhsghasgfjdsgsgfjdshgfjdgfdgsssssssssssssssssssssssssssssssssssssssssssssssjkahkajhkjahkjahkjahkajhkjahkajhkajhjahkjahjkahjkakhjhajkahjahjkahjkhjahjahjkajhjakajhjahjkahkjahkja
-fsfjksldfsddsfsjfksklnf
+	{{ result[0] }}
 </div>
 </div>
 </div>
